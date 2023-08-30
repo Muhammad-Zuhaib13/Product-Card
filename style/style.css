@@ -1,0 +1,133 @@
+h1 {
+    color: aqua;
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap:12px;
+    padding: 10px 14px;
+    overflow: hidden;
+}
+.product-card-container {
+    max-width: 22rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card {
+    width: 100%;
+}
+
+.product-card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.img-container-one,
+.img-container-two {
+    width: 100%;
+    height: auto;
+    transition: opacity 0.25s ease, transform 0.25s ease-out, transform 1s ease-out;
+}
+
+.img-container-one img {
+    width: 100%;
+}
+
+.img-container-two img {
+    width: 100%;
+}
+
+.img-container-two {
+    position: absolute;
+    z-index: -1;
+}
+
+.change-z-index-pos {
+    z-index: 1;
+    animation-name: fadeInDown;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+}
+
+.change-z-index-neg {
+    z-index: -1;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-delay: 0.2s;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+
+.btn-quick-view {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: calc(100% - 98%);
+    left: 0;
+    z-index: 99;
+}
+
+.btn-quick-view button {
+    background-color: #000;
+    bottom: 10px;
+    color: #fff;
+    cursor: pointer;
+    width: calc(100% - 20px);
+    font-size: calc(15px * 0.85);
+    left: 10px;
+    opacity: 1;
+    padding: 8px 5px;
+    right: 10px;
+    opacity: 0;
+    text-align: center;
+    transition: opacity 0.25s ease, transform 0.25s ease-out, background 0.4s ease;
+    text-transform: capitalize;
+}
+
+.product-card-container:hover .btn-quick-view button {
+    transform: translateY(-8px);
+    opacity: 1;
+}
+
+.product-card-footer {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-align: left;
+    gap: 8px;
+    padding: 10px 0 6px;
+    text-transform: capitalize;
+}
+
+.product-title {
+    font-weight: 450;
+}
+
+.product-price {
+    font-size: calc(15px * 0.85);
+}
+
